@@ -1,0 +1,46 @@
+Vulnerabilities:
+
+Vulnerability 1, Cross-Site Request Forgery (CSRF): 
+A user could put in an <img> tag into the comment box. When other users go to comment box page, they will send GET requests to that value (site) the attacker used the src atribute as. If a user has logged in to that site before, he could pass in his cookies to get authorization to do very privilleged things.
+For example, <img src="http://bank.com/transfer.do?acct=MARIA&amount=100000" width="0" height="0" border="0">
+would send a GET request to transder $100000 to Maria (attacker).
+
+Fix:
+1. A secret token pattern could be used which would be be verified on the server. It would be embedded by the web application in the HTML forms and then verified on the server side. The attacker would be unable to guess them.
+2. Checking the Origin Header. If the Origin header is present, check if its value matches the target origin.
+
+Vulnerability 2, Client Side Validation:
+The user could edit the HTML code and remove the pattern attribute in the Beta sign up code to sign up without a proper code.
+
+Fix: Do validation also on the server side and send error, confirmation messages accordingly.
+
+Vulnerability 3, XSS
+A attacker can add in a script in the comment box and whenever a different user visits that page, the script would run in his/her browser. These scripts are dangerous and can even include sending cookies of the page to the attacker's website, etc
+
+Fix: Do form input sanitization on the server side, e.g using blacklisting dangerous tags like the script tag to be invalid. 
+
+Vulnerability 4, SQL Injection
+An attacker could get all the database entries using SQL injection on the sign in box's username text field. 
+For example, entering in something like => 
+' OR '1'='1 
+would result in => 
+SELECT id, username, password, is_admin FROM users WHERE username = '' OR '1'='1'
+Therefore it would return all tables.
+
+However since theres a check for multiple rows, this could be performed=>
+a'; DROP TABLE users; SELECT id, username, password, is_admin FROM users WHERE username = 'shafaaf1
+
+This would evaluate to =>
+SELECT id, username, password, is_admin FROM users WHERE username = 'a'; DROP TABLE users; SELECT id, username, password, is_admin FROM users WHERE username = 'shafaaf1'
+
+This is valid due to the arrangement of quotes and brackets and returns 1 row, but will delete the whole database.
+
+Fix:
+1. Use object-relational mapping libraries which would not use SQL code. They will generate the SQL statements from the OOP code.
+2. There are various parts of SQL queries are not proper locations for the use of binding variables. Parameterized statements that work with parameters can be used instead of embedding user input in the statement. For the names of tables or columns, those values should come from the code, and not from user parameters. Therefore the parameter values should be mapped to the expected table or column names. This is done to make sure unvalidated user input does not end up in the query.
+
+References:
+1. https://en.wikipedia.org/wiki/SQL_injection
+2. https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet#Defense_Option_1:_Prepared_Statements_.28with_Parameterized_Queries.29
+3. https://en.wikipedia.org/wiki/Cross-site_scripting
+4. https://en.wikipedia.org/wiki/Cross-site_request_forgery

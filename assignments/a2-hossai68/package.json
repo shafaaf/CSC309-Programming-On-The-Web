@@ -1,0 +1,23 @@
+{
+  "name": "restapi",
+  "version": "1.0.0",
+  "description": "Develop a set of RESTful APIs capable of reading a JSON file deployed on accessible Node.js server.  Data from the JSON file should be accessible using a collection of simple HTTP reqeusts and presented appropriately on the front-end.",
+  "main": "tapp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shafaaf/a2-hossai68.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shafaaf/a2-hossai68/issues"
+  },
+  "homepage": "https://github.com/shafaaf/a2-hossai68#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}

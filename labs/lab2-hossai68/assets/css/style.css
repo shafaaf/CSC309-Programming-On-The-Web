@@ -1,0 +1,204 @@
+/* E.g. Style Guide: https://google.github.io/styleguide/htmlcssguide.xml */
+
+
+/**
+ * Your main styles at the top apply to the smallest screen/viewport,
+ * e.g. width of 320px, or anything less than the following breakpoint.
+ * Ordering the breakpoints in this way, smallest to biggest, is loosely
+ * called a "mobile-first" approach to responsive design. The CSS targets
+ * the "mobile" device sizes first, then overridden on larger devices.
+ */
+
+* { 
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    color:white;
+}
+
+header span.img {
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.img, p,a{
+    font-size: 120%;
+}
+
+.img{
+    background-color: #33cccc;
+    padding: 5%;
+}
+
+.myMenu{
+    background-color: #A9A9A9;
+    padding: 5%;
+
+}
+
+.myMenuItem{
+    background-color: #A9A9A9;
+    padding: 5%;
+
+}
+
+.myColumn{
+    background-color: #0099ff;
+    padding: 5%;
+
+}
+
+.myFooter{
+    background-color: #A9A9A9;
+    padding: 5%;
+
+}
+
+
+/**
+ * This is our first breakpoint!
+ * If you increase the viewport (your browser window) size from 479px to 480px,
+ * (e.g. depending on the mobile phone size, perhaps changing the orientation
+ * of the phone to horizontal will trigger this breakpoint).
+ * Note: there is no "upper limit" in this breakpoint, so any styles in other
+ * following breakpoints after this could override this one.
+ */
+
+@media screen and (min-width: 480px) {
+
+    /**
+     * Tip! Since we need floating columns, we can apply the floats here
+     * and also the self-clearing container trick.
+     * Incase you're wondering `::after` is a pseudo element:
+     * http://www.w3schools.com/CSSref/sel_after.asp
+     */
+    section::after {
+        clear: both;
+        content: '';
+        display: table;
+        height: 0;
+        visibility: hidden;
+    }
+
+    section article {
+        float: left;
+    }
+
+    /* Re-style here... */
+    .img {
+        padding: 2%;
+        top: 0%;
+    }
+    .myMenu{
+        padding: 0% 0% 1% 0%;
+        margin-top: 2%;
+    }
+    .myMenuItem{
+        padding: 1% 0% 2% 0%;
+    }
+
+
+    #test{ 
+        width:100%; 
+    }
+
+
+    #myColumn1{
+        width:48%;
+        float:left;
+        padding:5% 5% 4% 5%;
+        margin-top:-2%;
+        margin-bottom: -5%;
+    }
+
+    #myColumn2{
+        width:48%;
+        float:right;
+        padding:5% 5% 4% 5%;
+        margin-top:-2%;
+        margin-bottom: -5%;
+    }
+
+    footer, .myFooter{
+        width: 100%;
+        margin-top: 5%;
+        clear:both;
+        padding-top: 3%;
+        padding-left:0%;
+        padding-right:0%;
+        margin-top:4%;
+    }
+
+}
+
+
+/* We're skipping a lot of possible breakpoints here ... */
+
+
+/**
+ * At 1280px viewport width, any styles declared in this breakpoint will
+ * override previous styles with matching signatures.
+ */
+
+@media screen and (min-width: 1280px) {
+    /* Re-style here, if necessary! You may want to use the same technique
+     * used in section::after for the header*/
+
+     .img {
+        width: 25%;
+        margin:0%;
+        padding:2%;
+        float:left;
+
+    }
+    .menu{
+        padding:2%;
+        margin:0%;
+        width:75%;
+    
+    }
+    
+    .myMenuItem{   
+        padding:2%;
+        margin:0%;
+        width: 25%;
+        float:left;
+               
+    }
+
+
+    #test{ 
+        width:100%;
+        margin: 0%;
+        padding: 0%;
+    }
+
+
+    #myColumn1{
+        width:49%;
+        float:left;
+        padding:12%;
+        margin: 0%;
+        margin-top:2%;
+    }
+
+    #myColumn2{
+        width:49%;
+        float:right;
+        padding:12%;
+        margin: 0%;   
+        margin-top:2%;
+
+    }
+
+    footer, .myFooter{
+        width: 100%;
+        padding: 4% 0% 3% 0%;
+        margin: 0%;
+        margin-top:-3%;
+    }
+
+}

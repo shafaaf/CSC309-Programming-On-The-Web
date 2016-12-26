@@ -1,0 +1,67 @@
+/* 
+	For reference:
+		For id : Use #
+		For class : use .
+*/
+
+/*-------------------------------------*/
+
+/*Shared by all*/
+.headers{
+	text-align: center;
+}
+
+/*-------------------------------------*/
+
+/*GET /applicants*/
+
+#getAllApplicantsTable{
+	margin-top: 3%;
+}
+
+/*-------------------------------------*/
+
+/*GET /applicants?fname=fname*/
+
+#getApplicantsFnameBtn{
+	margin-top: 1%;
+}
+
+#getApplicantsFnameTableCourses{
+	padding-bottom: 1%;
+}
+
+/*-------------------------------------*/
+
+/* DELETE /applicants?fname=fname */
+
+#deleteApplicantsFnameBtn{
+	margin-top: 1%;
+}
+
+/*-------------------------------------*/
+
+/* DELETE /applicants?stunum=stunum */
+
+#deleteApplicantsStunumBtn{
+	margin-top: 1%;
+}
+
+/*-------------------------------------*/
+
+/*POST /applicants*/
+
+.deleteApplicantsInputField{
+}
+
+#postApplicantsBtn{
+	margin-top: 1%;
+}
+
+
+/*-------------------------------------*/
+
+
+
+
+/*-------------------------------------*/

@@ -1,0 +1,12 @@
+References
+http://stackoverflow.com/questions/2829665/align-div-with-fixed-position-on-the-right-side
+http://stackoverflow.com/questions/16406015/how-can-i-create-a-fixed-top-bar
+http://www.w3schools.com/css/css3_borders.asp
+http://www.w3schools.com/jsref/jsref_push.asp
+http://www.w3schools.com/js/js_htmldom_html.asp
+http://www.w3schools.com/html/html5_draganddrop.asp
+http://stackoverflow.com/questions/1208222/how-do-i-implement-a-dictionary-or-hashtable-in-javascript
+http://stackoverflow.com/questions/3010840/loop-through-an-array-in-javascript
+http://www.w3schools.com/jsref/met_loc_reload.asp
+http://stackoverflow.com/questions/9277311/horizontally-aligning-divs
+http://stackoverflow.com/questions/7560832/how-to-center-a-button-within-a-div

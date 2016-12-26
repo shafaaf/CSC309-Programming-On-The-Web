@@ -1,0 +1,176 @@
+  <!-- ____________________________________________________________________________________________________________________________________-->
+                                                            <!-- HTML Code for project-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- ____________________________________________________________________________________________________________________________________-->
+                                                                <!-- Head Code-->
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>Shafaaf's quiz2</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+
+<!-- ____________________________________________________________________________________________________________________________________-->
+                                                              <!-- Main body Code-->
+    
+  <body>   
+    <div id = "fixedBar">Shafaaf's Cool Quiz</div>
+    <p id = "resetButton" type="button" onclick="resetButtonClick()">Reset</p>
+    <div id = "totalScore">Total Score: 0/0</div>
+
+<!-- ____________________________________________________________________________________________________________________________________-->
+                                                          <!-- Question 1 HTML Code-->
+    
+    <div id="question1">
+      <h3 class = "questionHeader">
+        Question 1: The first electronic computer in Canada was housed in the Computer Science Department at the U of T.  What was its name?
+      </h3>
+
+      <p id = "question1Instructions"> <b>Instructons:</b> Click on an name to select it.</p>
+
+      <p class = "question1Choices" id = "question1Choice1" onclick="clickQuestion1(this.id)" > a) HAL 9000 </p>
+      <p class = "question1Choices" id = "question1Choice2" onclick="clickQuestion1(this.id)" > b) FERUT </p>
+      <p class = "question1Choices" id = "question1Choice3" onclick="clickQuestion1(this.id)" > c) ILLIAC </p>
+      <p class = "question1Choices" id = "question1Choice4" onclick="clickQuestion1(this.id)" > d) UNIVAC </p>
+
+      <!-- Response and grading -->
+      <p id = "chosenExplanation"></p>
+      <p id = "question1Grade"></p>
+      <div id = "showAllAnswersSection"></div>
+    </div>
+
+<!-- ____________________________________________________________________________________________________________________________________-->
+                                                        <!-- Question 2 HTML Code-->   
+
+    <div id="question2" >
+      <h3 class = "questionHeader" id = "question2Header">
+        Question 2: University of Toronto Professors Kelly Gotlieb and Pat Hume are credited in the Oxford English Dictionary with early published use of more than 10 words used in the vocabulary of computing from their 1958 book, "High-speed Data Processing".  Which two of the following are *not* words for which they are quoted in the OED?
+      </h3>
+
+      <p id = "question2Instructions"> <b>Instructons:</b> Click on an word to select it. To deselect, click it again!</p>
+
+      <!-- Item selections -->
+      <p class = "question2Choices" id = "loop" onclick="clickQuestion2(this.id)" > a) loop </p>
+      <p class = "question2Choices" id = "inline" onclick="clickQuestion2(this.id)" > b) inline </p>
+      <p class = "question2Choices" id = "keyboard" onclick="clickQuestion2(this.id)" > c) keyboard </p>
+      <p class = "question2Choices" id = "interpreter" onclick="clickQuestion2(this.id)" > d) interpreter </p>
+      <p class = "question2Choices" id = "function" onclick="clickQuestion2(this.id)" > e) function </p>
+      <p class = "question2Choices" id = "block" onclick="clickQuestion2(this.id)" > f) block </p>
+      <p class = "question2Choices" id = "character" onclick="clickQuestion2(this.id)" > g) character </p>
+      <p class = "question2Choices" id = "variable" onclick="clickQuestion2(this.id)" > h) variable </p>
+
+      <button type="button" id = "question2SubmitButton" onclick="question2ButtonSubmit()">Submit answers!</button>
+      
+      <!-- Response and grading -->
+      <p id = "question2Response"></p>
+      <p id = "question2Grade"></p>
+    </div>
+
+<!-- ____________________________________________________________________________________________________________________________________-->
+                                                        <!-- Question 3 HTML Code-->
+
+    <div id="question3" >
+      <h3 class = "questionHeader" id = "question3Header">
+        Question 3: Match the CS Professor with his or her claim to fame.
+      </h3>
+
+      <p id = "question3Instructions"> <b>Instructons:</b> Click a professor on the left and click a fame on the right to make a pair with same colors. To unselect a pair, click the highlighted professor again or make a new pair using a used fact! <br>Colors will be updated accordongly.  Statuses will displayed on the top and errors will be reported on the bottom.  Now start!</p>
+
+      <h3 id = "question3Status"></h3>
+
+      <!-- Item selections -->
+
+      <div id="question3Row1">
+        <p id = "Daniel" class = "question3Items" onclick = "question3LeftColumnClick(this.id)"> Daniel Wigdor</p>
+        <p id = "Canada" class = "question3Items" onclick = "question3RightColumnClick(this.id)">Canada Research Chair in Machine Learning and Computer Vision, researching self-driving cars</p>   
+      </div>
+
+      <div id="question3Row2">
+        <p id = "Stephen" class = "question3Items" onclick = "question3LeftColumnClick(this.id)">Stephen Cook</p>
+        <p id = "Academy" class = "question3Items" onclick = "question3RightColumnClick(this.id)">Academy Award for Ryan (software research and development director)</p>
+      </div>
+
+       <div id="question3Row3">
+        <p id = "Geoff" class = "question3Items" onclick = "question3LeftColumnClick(this.id)">Geoff Hinton</p>
+        <p id = "Taught" class = "question3Items" onclick = "question3RightColumnClick(this.id)">Taught a first-year course while an undergraduate student in our department</p>
+      </div>
+
+
+       <div id="question3Row4">
+        <p id = "Karan" class = "question3Items" onclick = "question3LeftColumnClick(this.id)">Karan Singh</p>
+        <p id = "Associate" class = "question3Items" onclick = "question3RightColumnClick(this.id)">Associate Research Scientist at Disney Research before joining the faculty</p>
+      </div>
+
+      
+      <div id="question3Row5">
+        <p id = "Diane" class = "question3Items" onclick = "question3LeftColumnClick(this.id)">Diane Horton</p>
+        <p id = "Turing" class = "question3Items" onclick = "question3RightColumnClick(this.id)">Turing Award winner for work in computational complexity</p>
+      </div>
+
+      <div id="question3Row6">
+        <p id = "Raquel" class = "question3Items" onclick = "question3LeftColumnClick(this.id)">Raquel Urtasun</p>
+        <p id = "Pioneer" class = "question3Items" onclick = "question3RightColumnClick(this.id)">Pioneer in machine learning, now Distinguished Researcher at Google</p>
+      </div>
+
+       <div id="question3Row7">
+        <p id = "David" class = "question3Items" onclick = "question3LeftColumnClick(this.id)">David Levin</p>
+        <p id = "Winner" class = "question3Items" onclick = "question3RightColumnClick(this.id)">Winner of both the President's Teaching Award and OCUFA teaching award</p>
+      </div>
+
+      <div id="question3Row8">
+        <p id = "Mike" class = "question3Items" onclick = "question3LeftColumnClick(this.id)">Mike Brudno</p>
+        <p id = "Scientific" class = "question3Items" onclick = "question3RightColumnClick(this.id)">Scientific Director of the Centre for Computational Medicine at Sick Kids Hospital</p>
+      </div>
+        
+      <!-- Response and grading -->
+      <p id = "question3Response"></p>
+      <button type="button" id = "question3SubmitButton" onclick="question3ButtonSubmit()">Submit answers!</button>
+      <p id = "question3Grade"></p>
+
+      <div id = "question3CorrectChoices"></div>
+      <div id = "question3WrongChoices"></div>
+      
+    </div>
+
+<!-- ____________________________________________________________________________________________________________________________________-->
+                                                        <!-- Question 4 HTML Code-->
+    
+    <div id="question4" >
+      <h3 class = "questionHeader" id = "question4Header">
+        Question 4: Arrange by year of invention from oldest to newest      
+      </h3>
+
+      <p id = "question4Instructions"> <b>Instructons:</b> The top box is the history timeline of inventions. Click on an invention on the bottom table and drag it onto an empty space on the timeline table. Answer will be graded and displayed below.<br>Items can be moved back to the bottom box.
+      Also, dropping an item onto a box will always make the item move to the bottom. ALWAYS select 1 item at a time!
+      </p>
+
+      <!-- History timeline box -->
+      <div id = "question4DatesBox" class = "question4Box" ondrop="drop(event, this.id)" ondragover="allowDrop(event)"></div>       
+
+      <!-- Box which stores initial inputs -->
+      <div id = "questionInventionBox" class = "question4Box" ondrop="drop(event, this.id)" ondragover="allowDrop(event)">      
+        <p id = "firstComputerNetwork" class = "question4Items" draggable="true" ondragstart="drag(event)">The First Computer Network</p>
+        <p id = "firstMicroprocessor" class = "question4Items" draggable="true" ondragstart="drag(event)" >First Microprocessor: Intel 4004</p>
+        <p id = "firstPopular" class = "question4Items" draggable="true" ondragstart="drag(event)">First Popular High-Level Language: FORTRAN</p>       
+        <p id = "firstOpenSource" class = "question4Items" draggable="true" ondragstart="drag(event)">First Open Source Software: A-2 System</p>
+        <p id = "firstCompiler" class = "question4Items" draggable="true" ondragstart="drag(event)">First Compiler for Electronic Computer: A-0 System</p>
+        <p id = "firstComputerProgram" class = "question4Items" draggable="true" ondragstart="drag(event)">First Computer Program</p>
+        <p id = "firstObjectOriented" class = "question4Items" draggable="true" ondragstart="drag(event)">First Object Oriented Programming Language: Simula</p>
+      </div>   
+       
+      <!-- Response and grading -->
+      <p id = "question4Response"></p>
+      <button type="button" id = "question4SubmitButton" onclick="question4ButtonSubmit()">Submit!</button>
+      <p id = "question4Grade"></p>
+      <h4 id = "question4Solution"></h4>
+      
+    </div> 
+
+    <!-- ____________________________________________________________________________________________________________________________________-->
+                                                        <!--  End of body code-->
+
+    <script src="quiz.js"></script>
+
+  </body>
+</html>

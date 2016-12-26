@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+  <!-- ____________________________________________________________________________________________________________________________________-->
+
+<head>
+    <title>Assignment 2</title>
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+
+<!-- ____________________________________________________________________________________________________________________________________-->
+
+<body>    
+    
+    <h1 class="headers">Shafaaf's RESTful API</h1>
+
+    <!-- GET /applicants-->
+    <div class="headers">
+        <h2>Get all applicants' info</h2>
+        <button type="button" id = "getAllApplicantsBtn">Get all applicants!</button>
+        <table align="center" id = "getAllApplicantsTable"></table>
+    </div>
+
+<!-- ____________________________________________________________________________________________________________________________________-->
+
+     <!-- GET /applicants?status=status -->
+    <div class="headers">
+        <h2>Get applicants by status</h2>
+        <select id="statusDropDown">
+            <option value="1">MSc</option>
+            <option value="2">PhD</option>
+            <option value="3">Undergrad</option>
+        </select>
+        <button type="button" id = "getApplicantsStatusBtn">Get all these specific applicants!</button>
+
+        <p id = "getApplicantsStatusErrorMessage"></p>
+        <table align="center" id = "getApplicantsStatusTable"></table>
+    </div>
+
+<!-- ____________________________________________________________________________________________________________________________________-->
+
+    <!-- GET /applicants?fname=fname -->
+    <div class="headers">
+        <h2>Get a unique applicant by family name</h2>
+        <form id = "getApplicantsFnameForm">
+            Family name:<br>
+            <input type="text" id = "getApplicantsFnameId" ><br>
+        </form>
+
+        <button type="button" id = "getApplicantsFnameBtn">Get applicant!</button>
+        <p id = "getApplicantsFnameErrorMessage"></p>
+
+        <h3 id = "getApplicantsFnameTableHeader"></h3>
+        <table align="center" id = "getApplicantsFnameTable"></table>
+
+        <h3 id = "getApplicantsFnameTableCoursesHeader"></h3>
+        <table align="center" id = "getApplicantsFnameTableCourses"></table>
+    </div>
+
+<!-- ____________________________________________________________________________________________________________________________________-->
+
+    <!-- POST /applicants -->
+    <div class="headers">
+        <h2>Make a unique applicant</h2>
+        <form id = "postApplicantsStunumForm">
+            <input type="text" class = "postApplicantsInputField" id = "postApplicantsStatusId" placeholder = "Status">
+            <input type="text" class = "postApplicantsInputField" id = "postApplicantsYearId" placeholder = "Year">
+            <input type="text" class = "postApplicantsInputField" id = "postApplicantsStudentNumberId" placeholder = "Student Number">
+            <input type="text" class = "postApplicantsInputField" id = "postApplicantsGivenNameId" placeholder = "Given Name">
+            <input type="text" class = "postApplicantsInputField" id = "postApplicantsFamilyNameId" placeholder = "Family Name"><br>
+            
+            <br>Courses<br>
+            <input type="text" class = "postApplicantsInputField" id = "code1" placeholder = "Code">
+            <input type="text" class = "postApplicantsInputField" id = "rank1" placeholder = "Rank">
+            <input type="text" class = "postApplicantsInputField" id = "experience1" placeholder = "Exerience"><br>
+            <div id = "moreCourses"></div> <!-- More courses added here-->
+            <br><button type="button" id = "addCourseBtn">Add another course!</button>
+        </form>
+
+        <button type="button" id = "postApplicantsBtn">Make applicant!</button>
+        <p id = "postApplicantsMessage"></p>
+    </div>   
+
+<!-- ____________________________________________________________________________________________________________________________________-->
+
+    <!-- DELETE /applicants?fname=fname -->
+    <div class="headers">
+        <h2>Delete a unique applicant by family name</h2>
+        <form id = "deleteApplicantsFnameForm">
+            Family name:<br>
+            <input type="text" id = "deleteApplicantsFnameId" ><br>
+        </form>
+
+        <button type="button" id = "deleteApplicantsFnameBtn">Delete applicant!</button>
+        <p id = "deleteApplicantsFnameMessage"></p>
+    </div>
+
+<!-- ____________________________________________________________________________________________________________________________________-->
+
+    <!-- DELETE /applicants?stunum=stunum -->
+    <div class="headers">
+        <h2>Delete a unique applicant by student number</h2>
+        <form id = "deleteApplicantsStunumForm">
+            Student Number:<br>
+            <input type="text" id = "deleteApplicantsStunumId" ><br>
+        </form>
+
+        <button type="button" id = "deleteApplicantsStunumBtn">Delete applicant!</button>
+        <p id = "deleteApplicantsStunumMessage"></p>
+    </div>
+
+<!-- ____________________________________________________________________________________________________________________________________-->
+
+    <!-- GET /courses -->
+    <div class="headers">
+        <h2>Get all courses' info</h2>
+        <button type="button" id = "getAllCoursesBtn">Get all courses!</button>
+        <div align="center" id = "getAllCoursesSection"></table>
+    </div>
+
+<!-- ____________________________________________________________________________________________________________________________________-->
+
+    <!-- GET /courses?course=course -->
+    <div class="headers">
+        <h2>Get all info about course</h2>
+        <form id = "getCourseInfoForm">
+            Course code<br>
+            <input type="text" id = "getCourseInfoId" ><br>
+        </form>
+        <button type="button" id = "getCourseInfoButton">Get all info about this course!</button>
+        <p id = "getCourseInfoErrorMessage"></p>
+
+        <h3 id = "getCourseInfoHeader"></h3>
+        <table align="center" id = "getCourseInfoTable"></table>
+    </div>
+
+
+<!-- ____________________________________________________________________________________________________________________________________-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="myScripts.js"></script>
+
+</body>
+
